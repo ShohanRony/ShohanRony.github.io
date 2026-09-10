@@ -333,6 +333,30 @@ a:hover { text-decoration: underline; }
   max-width: 560px;
 }
 
+.research-figure-wide {
+  max-width: 100%;
+}
+.research-figure-wide img,
+.research-figure-wide figcaption {
+  max-width: 100%;
+}
+
+.research-figure-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.research-figure-row .research-figure {
+  flex: 1 1 240px;
+  max-width: 300px;
+  margin-bottom: 0;
+}
+.research-figure-row .research-figure img,
+.research-figure-row .research-figure figcaption {
+  max-width: 100%;
+}
+
 .project-group-heading {
   font-family: var(--mono);
   font-size: 0.82rem;
