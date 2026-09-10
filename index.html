@@ -50,9 +50,9 @@
       <p class="eyebrow">Computer Science & Engineering Graduate</p>
       <h1>Shohinur Pervez Shohan</h1>
       <p class="hero-lede">
-        Data science &amp; machine learning researcher applying rigorous spatial validation
-        to environmental monitoring, and building an empirical case for trustworthy
-        efficiency metrics in Green AI.
+        Machine learning researcher applying rigorous spatial validation to environmental
+        monitoring, with research interests in Green AI efficiency, remote sensing, and
+        trustworthy model compression. Currently pursuing graduate study in AI-related fields.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="assets/Shohinur_Pervez_Shohan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -67,7 +67,7 @@
       </ul>
 
       <div class="worked-with">
-        <span class="worked-with-label">Certified with</span>
+        <span class="worked-with-label">Trained with</span>
         <ul class="logo-strip">
           <li>Google</li>
           <li>Coursera</li>
@@ -83,14 +83,13 @@
     <h2><span class="num">01</span> About</h2>
     <p class="lead">
       I am a Computer Science and Engineering graduate from Rangamati Science and Technology
-      University, Bangladesh, working at the intersection of data science, machine learning,
-      and satellite remote sensing. I independently extended my undergraduate thesis into a
-      peer-reviewed conference submission, applying rigorous spatial validation to three decades
-      of land-cover data, and I have carried that same emphasis on measurement rigor into applied
-      data-analytics projects and an ongoing research interest in efficient, trustworthy AI. My
-      background combines hands-on IT support experience with independent research and analytics
-      work — I am currently looking for opportunities in data analysis, machine learning, or
-      research roles, as well as graduate study in AI-related fields.
+      University, Bangladesh, pursuing graduate study in AI-related fields, with a research focus
+      on environmental machine learning and Green AI. I independently extended my undergraduate
+      thesis into a peer-reviewed conference submission, applying rigorous spatial validation to
+      three decades of land-cover data — an emphasis on measurement rigor that now carries into my
+      current work on trustworthy efficiency metrics for model compression. Alongside this research
+      track, I have built applied experience in data analytics and IT support, which grounds my
+      research in practical, reproducible tooling rather than theory alone.
     </p>
   </section>
 
@@ -100,14 +99,41 @@
     <article class="research-item">
       <h3>Multi-Decadal Land-Cover Mapping of the Chittagong Hill Tracts Using Machine Learning and Spatial Validation</h3>
       <p class="research-meta">Submitted to ICCIT 2026 (double-blind peer review) — currently under review</p>
-      <ul>
-        <li>Originated as B.Sc. thesis (2024, graded A+) on machine-learning classification of deforestation from Landsat satellite imagery, then independently extended in 2026 into a full conference paper without institutional funding or supervision.</li>
-        <li>Rebuilt the entire processing pipeline with free and open-source tools (Google Earth Engine, Python, QGIS) for full reproducibility at no cost.</li>
-        <li>Compared three classifiers under spatially-blocked holdout validation: Support Vector Machine (78.04%), Random Forest (77.10%), CART (72.90%); benchmarked against the Hansen Global Forest Change dataset.</li>
-        <li>Reported area-adjusted 2023 classification accuracy of 73.17% (95% CI: 64.34–82.00%), with a forest-definition sensitivity analysis to test robustness.</li>
-        <li>Key finding: combined forest area increased 4.4% (+20,693 ha) between 1993 and 2023, while Dense Forest area declined by 8,235 ha — a more nuanced outcome than a single headline figure.</li>
-        <li>Code and data pipeline released publicly on GitHub for reproducibility.</li>
-      </ul>
+      <p class="research-origin">Originated as B.Sc. thesis (2024, graded A+), then independently extended in 2026 into a full conference paper without institutional funding or supervision.</p>
+      <dl class="research-qmfv">
+        <div>
+          <dt>Research question</dt>
+          <dd>Has forest coverage in the Chittagong Hill Tracts changed over three decades (1993–2023)?</dd>
+        </div>
+        <div>
+          <dt>Method</dt>
+          <dd>Machine-learning classification of six Landsat epochs, comparing Support Vector Machine (78.04%), Random Forest (77.10%), and CART (72.90%) under spatially-blocked holdout validation — a stricter design than a random split, chosen to avoid inflating accuracy through spatial autocorrelation. Benchmarked against the Hansen Global Forest Change dataset. Full pipeline built with free, open-source tools (Google Earth Engine, Python, QGIS).</dd>
+        </div>
+        <div>
+          <dt>Key finding</dt>
+          <dd>Combined forest area increased 4.4% (+20,693 ha) between 1993 and 2023 — but Dense Forest specifically declined by 8,235 ha, pointing to a shift in forest composition rather than simple loss or gain.</dd>
+        </div>
+        <div>
+          <dt>Validation</dt>
+          <dd>Area-adjusted 2023 classification accuracy of 73.17% (95% CI: 64.34–82.00%), plus a forest-definition sensitivity analysis to test how much the result depends on a single NDVI threshold. Full code and data pipeline released publicly for reproducibility.</dd>
+        </div>
+      </dl>
+
+      <figure class="research-figure">
+        <img src="assets/figures/fig1-comparison-1993-2023.png" alt="Side-by-side land-cover classification maps of Rangamati District for 1993 and 2023, showing dense forest, degraded forest/jhum, water, agriculture/settlement, and bare land" loading="lazy">
+        <figcaption>1993 vs. 2023 land-cover classification, Rangamati District. Both maps use the same Random Forest classifier (OA = 77.10%) trained on 2023 features.</figcaption>
+      </figure>
+
+      <figure class="research-figure">
+        <img src="assets/figures/fig2-change-detection.png" alt="Pixel-level forest change detection map for Rangamati District, 1993 to 2023, showing stable forest, forest loss, and forest gain/regrowth" loading="lazy">
+        <figcaption>Pixel-level change detection: 132 km² forest loss, 342 km² gain/regrowth, net +210 km² (+4.4%) between 1993 and 2023.</figcaption>
+      </figure>
+
+      <figure class="research-figure">
+        <img src="assets/figures/fig3-forest-area-trend.png" alt="Bar chart and trend line of total forest area in Rangamati District across six Landsat epochs from 1993 to 2023" loading="lazy">
+        <figcaption>Forest area by epoch (1993–2023). The 2008 dip is a reported data-quality artifact, not confirmed deforestation — see repository documentation.</figcaption>
+      </figure>
+
       <a class="repo-link" href="https://github.com/ShohanRony/rangamati-landcover-change-1993-2023" target="_blank" rel="noopener">
         <span class="repo-icon" aria-hidden="true">&lt;/&gt;</span> View repository — rangamati-landcover-change-1993-2023
       </a>
@@ -115,7 +141,8 @@
 
     <article class="research-item">
       <h3>Energy-Aware Efficiency of Lightweight Vision Models Under Post-Training Compression</h3>
-      <p class="research-meta">Research proposal — Proxy metrics, measurement reliability, and cross-platform behaviour in Green AI</p>
+      <p class="research-meta">In progress — targeting submission to Sustainable Computing: Informatics and Systems</p>
+      <p class="research-origin">Research proposal — proxy metrics, measurement reliability, and cross-platform behaviour in Green AI.</p>
       <ul>
         <li>Proposes a controlled, hardware-instrumented study testing whether FLOPs reduction from quantization and pruning produces proportional reductions in measured energy, across three lightweight vision architectures (ResNet-18, MobileNetV3-Small, EfficientNet-B0) and six compression states.</li>
         <li>Validates the software estimator CodeCarbon against hardware power counters specifically for compressed models, where existing validation studies do not cover this case.</li>
@@ -137,6 +164,7 @@
       <p class="timeline-org">Rangamati Science and Technology University (RMSTU), Bangladesh</p>
       <p>Faculty of Science, Engineering and Technology · CGPA 3.21 / 4.00 · Undergraduate thesis graded A+</p>
       <p class="muted">Year-wise GPA trend: 2.82 → 3.15 → 3.32 → 3.61</p>
+      <p class="muted">Nominal programme length is 4 years; extended completion timelines are common at Bangladeshi public universities due to periodic academic-session delays.</p>
     </div>
   </section>
 
@@ -150,9 +178,9 @@
       </div>
       <p class="timeline-org">Pro Better Life Bangladesh, Rangamati, Chattogram</p>
       <ul>
-        <li>Diagnose and resolve software, hardware, and network faults, applying systematic troubleshooting to reduce recurring downtime.</li>
-        <li>Maintain local network infrastructure and system availability for daily operations.</li>
-        <li>Advise end-users and produce written technical documentation for non-specialists.</li>
+        <li>Diagnose and resolve software, hardware, and network faults across the organisation, applying systematic troubleshooting rather than ad-hoc fixes to reduce recurring downtime.</li>
+        <li>Maintain local network infrastructure and day-to-day system availability for all staff.</li>
+        <li>Advise end-users directly and produce written technical documentation, translating technical issues into guidance non-specialists can follow independently.</li>
       </ul>
     </div>
 
@@ -177,6 +205,30 @@
 
   <section id="projects" class="section wrap reveal">
     <h2><span class="num">05</span> Projects</h2>
+
+    <h3 class="project-group-heading">Applied ML &amp; Computer Vision</h3>
+    <div class="project-grid">
+      <a class="project-card" href="https://github.com/ShohanRony/Online-Exam-Proctoring-System" target="_blank" rel="noopener">
+        <h3>Online Exam Proctoring System</h3>
+        <p>OpenCV-based monitoring tool for remote examinations.</p>
+        <span class="project-link">View repo →</span>
+      </a>
+      <a class="project-card" href="https://github.com/ShohanRony/Codveda-Intership-level2-ml-analysis-student-performance" target="_blank" rel="noopener">
+        <h3>Student Performance ML Analysis</h3>
+        <p>Regression and clustering models to identify performance drivers.</p>
+        <span class="project-link">View repo →</span>
+      </a>
+      <div class="project-card">
+        <h3>Automated Smart Home System</h3>
+        <p>IoT solution integrating sensors with device control.</p>
+      </div>
+      <div class="project-card">
+        <h3>Point-of-Sale Software</h3>
+        <p>Billing, inventory, and automated sales reporting for a technology retailer.</p>
+      </div>
+    </div>
+
+    <h3 class="project-group-heading">Data Analytics &amp; Business Intelligence</h3>
     <div class="project-grid">
       <a class="project-card" href="https://github.com/ShohanRony/Quantium-Data-Analysis-Project" target="_blank" rel="noopener">
         <h3>Retail Analytics Project</h3>
@@ -188,29 +240,11 @@
         <p>Customer segmentation and campaign-effectiveness evaluation.</p>
         <span class="project-link">View repo →</span>
       </a>
-      <a class="project-card" href="https://github.com/ShohanRony/Codveda-Intership-level2-ml-analysis-student-performance" target="_blank" rel="noopener">
-        <h3>Student Performance ML Analysis</h3>
-        <p>Regression and clustering models to identify performance drivers.</p>
-        <span class="project-link">View repo →</span>
-      </a>
       <a class="project-card" href="https://github.com/ShohanRony/freelancer-data-analysis" target="_blank" rel="noopener">
         <h3>Freelancer Market Analysis</h3>
         <p>Examined pricing trends and factors associated with success.</p>
         <span class="project-link">View repo →</span>
       </a>
-      <a class="project-card" href="https://github.com/ShohanRony/Online-Exam-Proctoring-System" target="_blank" rel="noopener">
-        <h3>Online Exam Proctoring System</h3>
-        <p>OpenCV-based monitoring tool for remote examinations.</p>
-        <span class="project-link">View repo →</span>
-      </a>
-      <div class="project-card">
-        <h3>Automated Smart Home System</h3>
-        <p>IoT solution integrating sensors with device control.</p>
-      </div>
-      <div class="project-card">
-        <h3>Point-of-Sale Software</h3>
-        <p>Billing, inventory, and automated sales reporting for a technology retailer.</p>
-      </div>
     </div>
   </section>
 
@@ -226,12 +260,20 @@
         </ul>
       </div>
       <div>
-        <h3>Tools &amp; Platforms</h3>
+        <h3>Data Science &amp; ML Tooling</h3>
+        <ul class="chip-list">
+          <li class="chip">scikit-learn</li>
+          <li class="chip">pandas</li>
+          <li class="chip">NumPy</li>
+          <li class="chip">OpenCV</li>
+          <li class="chip">Power BI</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Remote Sensing &amp; Tools</h3>
         <ul class="chip-list">
           <li class="chip">Google Earth Engine</li>
           <li class="chip">QGIS</li>
-          <li class="chip">OpenCV</li>
-          <li class="chip">Power BI</li>
           <li class="chip">Excel</li>
           <li class="chip">Git &amp; GitHub</li>
         </ul>
@@ -248,17 +290,32 @@
         </ul>
       </div>
       <div class="cert-block">
-        <h3>Certifications</h3>
-        <ul class="cert-list">
-          <li><a href="https://www.credly.com/badges/3f5e7715-6648-40f0-8026-c1805a12de81/linked_in_profile" target="_blank" rel="noopener">Google Data Analytics Professional Certificate</a> — Coursera</li>
-          <li><a href="https://www.coursera.org/account/accomplishments/specialization/HKHSSCZLBVE7" target="_blank" rel="noopener">Google Data Analytics Specialization</a> — Google</li>
-          <li>Data Analyst with Python — DataCamp</li>
-          <li>Microsoft Excel — 10 Minute School</li>
-          <li>Python Programming — Stanford University, Code in Place</li>
-          <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/T6kdcdKSTfg2aotxT/hzmoNKtzvAzXsEqx8_T6kdcdKSTfg2aotxT_u36fr27kyPjw3q7Pe_1742147511348_completion_certificate.pdf" target="_blank" rel="noopener">Accenture North America — Data Analytics &amp; Visualization Job Simulation</a>, Forage</li>
-          <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_u36fr27kyPjw3q7Pe_1739630795988_completion_certificate.pdf" target="_blank" rel="noopener">Deloitte Australia — Data Analytics Job Simulation</a>, Forage</li>
-          <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/32A6DqtsbF7LbKdcq/NkaC7knWtjSbi6aYv_32A6DqtsbF7LbKdcq_u36fr27kyPjw3q7Pe_1740480665482_completion_certificate.pdf" target="_blank" rel="noopener">Quantium — Data Analytics Job Simulation</a>, Forage</li>
-        </ul>
+        <h3>Selected Training &amp; Certifications</h3>
+        <div class="cert-groups">
+          <div>
+            <h4>Professional credentials</h4>
+            <ul class="cert-list">
+              <li><a href="https://www.credly.com/badges/3f5e7715-6648-40f0-8026-c1805a12de81/linked_in_profile" target="_blank" rel="noopener">Google Data Analytics Professional Certificate</a> — Coursera</li>
+              <li><a href="https://www.coursera.org/account/accomplishments/specialization/HKHSSCZLBVE7" target="_blank" rel="noopener">Google Data Analytics Specialization</a> — Google</li>
+              <li>Data Analyst with Python — DataCamp</li>
+            </ul>
+          </div>
+          <div>
+            <h4>University programs</h4>
+            <ul class="cert-list">
+              <li>Python Programming — Stanford University, Code in Place (non-credit community course)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Job simulations &amp; online learning</h4>
+            <ul class="cert-list">
+              <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/T6kdcdKSTfg2aotxT/hzmoNKtzvAzXsEqx8_T6kdcdKSTfg2aotxT_u36fr27kyPjw3q7Pe_1742147511348_completion_certificate.pdf" target="_blank" rel="noopener">Accenture North America — Data Analytics &amp; Visualization Job Simulation</a>, Forage</li>
+              <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_u36fr27kyPjw3q7Pe_1739630795988_completion_certificate.pdf" target="_blank" rel="noopener">Deloitte Australia — Data Analytics Job Simulation</a>, Forage</li>
+              <li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/32A6DqtsbF7LbKdcq/NkaC7knWtjSbi6aYv_32A6DqtsbF7LbKdcq_u36fr27kyPjw3q7Pe_1740480665482_completion_certificate.pdf" target="_blank" rel="noopener">Quantium — Data Analytics Job Simulation</a>, Forage</li>
+              <li>Microsoft Excel — 10 Minute School</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div>
         <h3>Languages</h3>

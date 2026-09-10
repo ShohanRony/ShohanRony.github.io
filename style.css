@@ -290,11 +290,58 @@ a:hover { text-decoration: underline; }
 }
 .research-item ul { margin: 0; padding-left: 20px; color: var(--text-muted); }
 .research-item li { margin-bottom: 8px; }
+.research-origin { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 18px; }
 .research-interests {
   border-top: 1px solid var(--border);
   padding-top: 20px;
   color: var(--text-muted);
 }
+
+.research-qmfv {
+  margin: 0 0 24px;
+  display: grid;
+  gap: 16px;
+}
+.research-qmfv dt {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.research-qmfv dd {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.research-figure {
+  margin: 0 0 24px;
+}
+.research-figure img {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.research-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.project-group-heading {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-2);
+  margin: 32px 0 16px;
+}
+.project-group-heading:first-of-type { margin-top: 0; }
 
 /* Timeline (education/experience) */
 .timeline-item {
@@ -412,9 +459,20 @@ a.project-card:hover::before { transform: scaleX(1); }
 .skills-grid h3 { font-size: 0.95rem; margin: 0 0 6px; color: var(--accent); }
 .skills-grid p { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
 .cert-block { grid-column: 1 / -1; }
-.cert-list { margin: 0; padding-left: 20px; color: var(--text-muted); font-size: 0.92rem; columns: 2; column-gap: 32px; }
-.cert-list li { margin-bottom: 6px; break-inside: avoid; }
-@media (max-width: 560px) { .cert-list { columns: 1; } }
+.cert-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+.cert-groups h4 {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  margin: 0 0 8px;
+}
+.cert-list { margin: 0; padding-left: 20px; color: var(--text-muted); font-size: 0.92rem; }
+.cert-list li { margin-bottom: 6px; }
 
 /* Contact */
 .contact-grid {
