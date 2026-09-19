@@ -160,15 +160,19 @@
     </article>
 
     <article class="research-item">
-      <h3>Energy-Aware Efficiency of Lightweight Vision Models Under Post-Training Compression</h3>
-      <p class="research-meta">In progress — targeting submission to Sustainable Computing: Informatics and Systems</p>
-      <p class="research-origin">Research proposal — proxy metrics, measurement reliability, and cross-platform behaviour in Green AI.</p>
+      <h3>Hardware-Validated Energy-Aware Reliability Evaluation of Compressed Neural Networks</h3>
+      <p class="research-meta">Master's research proposal (2027 intake) — Phase 1 independently executable; target venues TMLR / <em>Sustainable Computing: Informatics and Systems</em></p>
+      <p class="research-origin">A deployment-aware framework bridging efficient and trustworthy machine learning: measures reliability (calibration, robustness) and hardware-validated energy from the same inference passes, then compares compression methods at matched measured energy rather than matched FLOPs.</p>
       <ul>
-        <li>Proposes a controlled, hardware-instrumented study testing whether FLOPs reduction from quantization and pruning produces proportional reductions in measured energy, across three lightweight vision architectures (ResNet-18, MobileNetV3-Small, EfficientNet-B0) and six compression states.</li>
-        <li>Validates the software estimator CodeCarbon against hardware power counters specifically for compressed models, where existing validation studies do not cover this case.</li>
-        <li>Tests whether the rank ordering of compression methods by measured energy efficiency is preserved across x86 and ARM platforms.</li>
-        <li>Motivated by a finding from the applicant's own thesis: validation-method choice (not algorithm choice) reversed the headline conclusion from forest loss to broadly stable — the same scepticism is applied here to unvalidated efficiency proxies.</li>
+        <li>Tests whether software energy estimators (CodeCarbon, pyJoules) stay accurate on compressed models — existing validation studies stop at full-precision workloads, leaving quantisation's altered instruction mix and pruning's irregular memory access untested.</li>
+        <li>Reconciles contradictory findings on whether compression improves or harms model calibration and robustness, via a controlled sweep across quantisation, structured pruning, unstructured pruning, and distillation with per-class disaggregation.</li>
+        <li>Compares compression configurations within matched measured-energy bands instead of matched FLOPs or compression ratio, testing whether the ranking by accuracy agrees with the ranking by reliability (pre-registered hypotheses, Kendall's tau).</li>
+        <li>Phase 1 (year 1) runs entirely on hardware already in hand (RTX 3050 6GB, RAPL/NVML/powermetrics); Phase 2 (year 2) is scoped explicitly around resources the applicant cannot independently access — physical power meters, heterogeneous accelerators, and larger model families.</li>
+        <li>Extends the same scepticism toward unvalidated measurement that the applicant's undergraduate thesis applied to spatial validation — and builds directly on the literature review above.</li>
       </ul>
+      <a class="repo-link" href="assets/Shohan_Masters_Proposal_Final_v2.pdf" target="_blank" rel="noopener">
+        <span class="repo-icon" aria-hidden="true">PDF</span> Read full proposal
+      </a>
     </article>
 
     <p class="research-interests"><strong>Research interests:</strong> data science, sustainable &amp; green AI, environmental machine learning, model compression, and efficient data-driven approaches to large-scale monitoring.</p>
