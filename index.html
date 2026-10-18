@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shohinur Pervez Shohan — Portfolio</title>
-<meta name="description" content="Shohinur Pervez Shohan — Computer Science & Engineering graduate specialising in machine learning, remote sensing, and green AI research.">
+<meta name="description" content="Shohinur Pervez Shohan — Computer Science & Engineering graduate researching reliable and efficient machine learning: hardware-measured energy of compressed neural networks and the validity of energy-measurement tools.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -50,9 +50,10 @@
       <p class="eyebrow">Computer Science & Engineering Graduate</p>
       <h1>Shohinur Pervez Shohan</h1>
       <p class="hero-lede">
-        Machine learning researcher applying rigorous spatial validation to environmental
-        monitoring, with research interests in Green AI efficiency, remote sensing, and
-        trustworthy model compression. Currently pursuing graduate study in AI-related fields.
+        Machine learning researcher working on reliable and efficient machine learning:
+        hardware-measured energy of compressed neural networks (INT8 quantization, structured
+        pruning), the validity of energy-measurement tools (RAPL, NVML), and whether compressed
+        models stay accurate and calibrated. Currently pursuing graduate study in AI-related fields.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="assets/Shohinur_Pervez_Shohan_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -62,6 +63,7 @@
         <li><a href="https://github.com/ShohanRony" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://linkedin.com/in/shohan414" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://scholar.google.com/citations?user=4-a4hmoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://orcid.org/0009-0007-0864-9284" target="_blank" rel="noopener">ORCID</a></li>
         <li><a href="https://www.researchgate.net/profile/Shohinur-Shohan" target="_blank" rel="noopener">ResearchGate</a></li>
         <li><a href="https://www.kaggle.com/shohinurpervezshohan" target="_blank" rel="noopener">Kaggle</a></li>
       </ul>
@@ -72,13 +74,15 @@
     <h2><span class="num">01</span> About</h2>
     <p class="lead">
       I am a Computer Science and Engineering graduate from Rangamati Science and Technology
-      University, Bangladesh, pursuing graduate study in AI-related fields, with a research focus
-      on environmental machine learning and Green AI. I independently extended my undergraduate
-      thesis into a peer-reviewed conference submission, applying rigorous spatial validation to
-      three decades of land-cover data — an emphasis on measurement rigor that now carries into my
-      current work on trustworthy efficiency metrics for model compression. Alongside this research
-      track, I have built applied experience in data analytics and IT support, which grounds my
-      research in practical, reproducible tooling rather than theory alone.
+      University, Bangladesh, pursuing graduate study in AI-related fields. My research interest
+      is reliable and efficient machine learning: hardware-measured energy of compressed neural
+      networks (INT8 quantization, structured pruning), the validity of energy-measurement tools
+      (RAPL, NVML), and whether compressed models stay accurate and calibrated. My undergraduate
+      thesis — a land-cover mapping study using spatially blocked validation — is past work that
+      shaped my emphasis on measurement rigor, now independently extended into a conference
+      submission. Alongside this research track, I have built applied experience in data analytics
+      and IT support, which grounds my research in practical, reproducible tooling rather than
+      theory alone.
     </p>
   </section>
 
@@ -86,7 +90,75 @@
     <h2><span class="num">02</span> Research</h2>
 
     <article class="research-item">
-      <h3>Multi-Decadal Land-Cover Mapping of the Chittagong Hill Tracts Using Machine Learning and Spatial Validation</h3>
+      <h3>Energy Measurement of Compressed Vision Models — Phase 1</h3>
+      <p class="research-meta">Independent research, 2026 — paper in preparation for <em>Sustainable Computing: Informatics and Systems</em></p>
+      <p class="research-origin">A paired RAPL (CPU package-0) + NVML (GPU) energy-measurement harness, built and run entirely on my own laptop (Intel i5-13450HX, RTX 3050).</p>
+      <dl class="research-qmfv">
+        <div>
+          <dt>Method</dt>
+          <dd>ResNet-18, MobileNetV3-Small, and EfficientNet-B0 on CIFAR-10, under INT8 post-training quantization and 30/50/70% structured pruning.</dd>
+        </div>
+        <div>
+          <dt>Main result</dt>
+          <dd>x86-CPU block, 6 sessions, 144 conditions, 1,440 windows, batch size 1: MAC-ratio reductions overstated realized CPU energy savings by 2.28x on average (95% CI 2.26–2.30).</dd>
+        </div>
+        <div>
+          <dt>Instrument validity</dt>
+          <dd>Found the NVML cumulative energy counter over-reports active GPU power by ~30% and switched to sampled power; also found RAPL package-0 and psys were double-counted in my own code, corrected offline from raw data.</dd>
+        </div>
+        <div>
+          <dt>Accuracy</dt>
+          <dd>Only ResNet-18 under INT8 kept ≥99% of reference accuracy. All 9 zero-finetune pruned models failed, some near chance.</dd>
+        </div>
+        <div>
+          <dt>Provenance</dt>
+          <dd>Analysis plan frozen in a git tag before data collection; Zenodo archive deposited after data collection. 40 deviations logged.</dd>
+        </div>
+      </dl>
+      <a class="repo-link" href="https://github.com/ShohanRony/green-ai-energy-phase1" target="_blank" rel="noopener">
+        <span class="repo-icon" aria-hidden="true">&lt;/&gt;</span> View repository — green-ai-energy-phase1
+      </a>
+      <a class="repo-link" href="https://doi.org/10.5281/zenodo.23357783" target="_blank" rel="noopener">
+        <span class="repo-icon" aria-hidden="true">DOI</span> Zenodo record — 10.5281/zenodo.23357783
+      </a>
+    </article>
+
+    <article class="research-item">
+      <h3>Energy Measurement of Compressed Deep Learning Models: A Literature Review</h3>
+      <p class="research-meta">Submitted to Artificial Intelligence Theory and Applications (AITA, DergiPark), October 2026 — under review</p>
+      <p class="research-origin">An independent literature review examining the measurement layer beneath model compression's energy-savings claims, drawing on a purposively assembled corpus of 50+ works (2019–2026).</p>
+      <ul>
+        <li>Synthesises evidence that software energy estimators and hardware counters disagree by margins comparable to the energy savings compression claims to deliver.</li>
+        <li>Shows FLOPs-based proxies correlate weakly with measured energy once memory bandwidth, batch size, and backend kernel realisation are accounted for.</li>
+        <li>Finds that compression rankings established on one hardware platform do not reliably transfer to another.</li>
+        <li>Sets out a research agenda around three gaps — measurement-tool validation, the nominal-versus-realised compression gap, and cross-platform rank-order preservation — that motivates the Phase 1 study above.</li>
+      </ul>
+      <a class="repo-link" href="https://doi.org/10.5281/zenodo.22842954" target="_blank" rel="noopener">
+        <span class="repo-icon" aria-hidden="true">DOI</span> Zenodo record — 10.5281/zenodo.22842954
+      </a>
+      <a class="repo-link" href="https://github.com/ShohanRony/energy-measurement-compressed-dl-review" target="_blank" rel="noopener">
+        <span class="repo-icon" aria-hidden="true">&lt;/&gt;</span> View repository — energy-measurement-compressed-dl-review
+      </a>
+    </article>
+
+    <article class="research-item">
+      <h3>Hardware-Validated Energy-Aware Reliability Evaluation of Compressed Neural Networks</h3>
+      <p class="research-meta">Proposed Master's research (2027 intake)</p>
+      <p class="research-origin">A deployment-aware framework bridging efficient and trustworthy machine learning: measures reliability (calibration, robustness) and hardware-validated energy from the same inference passes, then compares compression methods at matched measured energy rather than matched FLOPs.</p>
+      <ul>
+        <li>Tests whether software energy estimators (CodeCarbon, pyJoules) stay accurate on compressed models — existing validation studies stop at full-precision workloads, leaving quantisation's altered instruction mix and pruning's irregular memory access untested.</li>
+        <li>Reconciles contradictory findings on whether compression improves or harms model calibration and robustness, via a controlled sweep across quantisation, structured pruning, unstructured pruning, and distillation with per-class disaggregation.</li>
+        <li>Compares compression configurations within matched measured-energy bands instead of matched FLOPs or compression ratio, testing whether the ranking by accuracy agrees with the ranking by reliability (hypotheses fixed in advance, Kendall's tau).</li>
+        <li>Builds on the completed Phase 1 research above (RTX 3050, RAPL/NVML); this proposal is scoped around resources not independently accessible — physical power meters, heterogeneous accelerators, and larger model families.</li>
+        <li>Extends the same scepticism toward unvalidated measurement that the applicant's undergraduate thesis applied to spatial validation — and builds directly on the literature review above.</li>
+      </ul>
+      <a class="repo-link" href="assets/Shohan_Masters_Proposal_Final_v2.pdf" target="_blank" rel="noopener">
+        <span class="repo-icon" aria-hidden="true">PDF</span> Read full proposal
+      </a>
+    </article>
+
+    <article class="research-item">
+      <h3>Multi-Decadal Land-Cover Mapping in the Chittagong Hill Tracts Using Spatially Blocked Classification, Area-Adjusted Accuracy Assessment, and Forest-Definition Sensitivity Analysis</h3>
       <p class="research-meta">Submitted to ICCIT 2026 (double-blind peer review) — currently under review</p>
       <p class="research-origin">Originated as B.Sc. thesis (2024, graded A+), then independently extended in 2026 into a full conference paper without institutional funding or supervision.</p>
       <dl class="research-qmfv">
@@ -130,41 +202,7 @@
       </a>
     </article>
 
-    <article class="research-item">
-      <h3>Energy Measurement of Compressed Deep Learning Models: A Literature Review</h3>
-      <p class="research-meta">Preprint, September 2026 — narrative literature review, not yet peer reviewed</p>
-      <p class="research-origin">Written while reading toward the Green AI research proposal below: an independent literature review examining the measurement layer beneath model compression's energy-savings claims, drawing on a purposively assembled corpus of 53 works (2019–2026).</p>
-      <ul>
-        <li>Synthesises evidence that software energy estimators and hardware counters disagree by margins comparable to the energy savings compression claims to deliver.</li>
-        <li>Shows FLOPs-based proxies correlate weakly with measured energy once memory bandwidth, batch size, and backend kernel realisation are accounted for.</li>
-        <li>Finds that compression rankings established on one hardware platform do not reliably transfer to another.</li>
-        <li>Sets out a research agenda around three gaps — measurement-tool validation, the nominal-versus-realised compression gap, and cross-platform rank-order preservation — that motivates the in-progress study below.</li>
-      </ul>
-      <a class="repo-link" href="https://doi.org/10.5281/zenodo.22842954" target="_blank" rel="noopener">
-        <span class="repo-icon" aria-hidden="true">DOI</span> Zenodo record — 10.5281/zenodo.22842954
-      </a>
-      <a class="repo-link" href="https://github.com/ShohanRony/energy-measurement-compressed-dl-review" target="_blank" rel="noopener">
-        <span class="repo-icon" aria-hidden="true">&lt;/&gt;</span> View repository — energy-measurement-compressed-dl-review
-      </a>
-    </article>
-
-    <article class="research-item">
-      <h3>Hardware-Validated Energy-Aware Reliability Evaluation of Compressed Neural Networks</h3>
-      <p class="research-meta">Master's research proposal (2027 intake) — Phase 1 independently executable; target venues TMLR / <em>Sustainable Computing: Informatics and Systems</em></p>
-      <p class="research-origin">A deployment-aware framework bridging efficient and trustworthy machine learning: measures reliability (calibration, robustness) and hardware-validated energy from the same inference passes, then compares compression methods at matched measured energy rather than matched FLOPs.</p>
-      <ul>
-        <li>Tests whether software energy estimators (CodeCarbon, pyJoules) stay accurate on compressed models — existing validation studies stop at full-precision workloads, leaving quantisation's altered instruction mix and pruning's irregular memory access untested.</li>
-        <li>Reconciles contradictory findings on whether compression improves or harms model calibration and robustness, via a controlled sweep across quantisation, structured pruning, unstructured pruning, and distillation with per-class disaggregation.</li>
-        <li>Compares compression configurations within matched measured-energy bands instead of matched FLOPs or compression ratio, testing whether the ranking by accuracy agrees with the ranking by reliability (pre-registered hypotheses, Kendall's tau).</li>
-        <li>Phase 1 (year 1) runs entirely on hardware already in hand (RTX 3050 6GB, RAPL/NVML/powermetrics); Phase 2 (year 2) is scoped explicitly around resources the applicant cannot independently access — physical power meters, heterogeneous accelerators, and larger model families.</li>
-        <li>Extends the same scepticism toward unvalidated measurement that the applicant's undergraduate thesis applied to spatial validation — and builds directly on the literature review above.</li>
-      </ul>
-      <a class="repo-link" href="assets/Shohan_Masters_Proposal_Final_v2.pdf" target="_blank" rel="noopener">
-        <span class="repo-icon" aria-hidden="true">PDF</span> Read full proposal
-      </a>
-    </article>
-
-    <p class="research-interests"><strong>Research interests:</strong> data science, sustainable &amp; green AI, environmental machine learning, model compression, and efficient data-driven approaches to large-scale monitoring.</p>
+    <p class="research-interests"><strong>Research interests:</strong> reliable and efficient machine learning — hardware-measured energy of compressed neural networks, the validity of energy-measurement tools (RAPL, NVML), and whether compressed models stay accurate and calibrated.</p>
   </section>
 
   <section id="education" class="section wrap reveal">
@@ -313,21 +351,17 @@
       </div>
       <div>
         <h3>Languages</h3>
-        <p>Bangla (native) · English (IELTS 6.5, CEFR B2) · Hindi (conversational) · Japanese (JLPT N5)</p>
+        <p>Bangla (native) · English (IELTS 6.5: L6.0 R6.5 W6.5 S6.0, Sept 2025) · Hindi (conversational) · Japanese (NAT-TEST 5Q, JLPT N5 equivalent, Aug 2026)</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="section wrap contact-section reveal">
     <h2><span class="num">07</span> Contact</h2>
-    <p class="lead">Open to Master's / research opportunities in AI, machine learning, and environmental data science.</p>
+    <p class="lead">Open to Master's / research opportunities in reliable and efficient machine learning.</p>
     <div class="contact-grid">
-      <a class="contact-card" href="mailto:Shohinur_20171455@student.rmstu.ac.bd">
-        <span class="contact-label">Email (primary)</span>
-        <span class="contact-value">Shohinur_20171455@student.rmstu.ac.bd</span>
-      </a>
       <a class="contact-card" href="mailto:shohan414@gmail.com">
-        <span class="contact-label">Email (secondary)</span>
+        <span class="contact-label">Email</span>
         <span class="contact-value">shohan414@gmail.com</span>
       </a>
       <a class="contact-card" href="https://github.com/ShohanRony" target="_blank" rel="noopener">
@@ -341,6 +375,10 @@
       <a class="contact-card" href="https://scholar.google.com/citations?user=4-a4hmoAAAAJ&hl=en" target="_blank" rel="noopener">
         <span class="contact-label">Google Scholar</span>
         <span class="contact-value">View profile</span>
+      </a>
+      <a class="contact-card" href="https://orcid.org/0009-0007-0864-9284" target="_blank" rel="noopener">
+        <span class="contact-label">ORCID</span>
+        <span class="contact-value">0009-0007-0864-9284</span>
       </a>
       <a class="contact-card" href="https://www.researchgate.net/profile/Shohinur-Shohan" target="_blank" rel="noopener">
         <span class="contact-label">ResearchGate</span>
